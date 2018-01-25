@@ -1,0 +1,42 @@
+<head>
+  <title>balanceChecker</title>
+    <h1>balanceChecker</h1>
+    <br>
+    <h2>A web3 connected application for checking the balance of ether wallets</h2>
+</head>
+
+<body>
+  {{> checkBalance}}
+  {{> currentWallet}}
+</body>
+
+<template name="checkBalance">
+    <form>
+        <input type="text" name="address">
+        <input type="submit" value="Search">
+    </form>
+
+    <ul>
+        <li>
+            Address: {{TemplateVar.get "address"}}
+        </li>
+        <li>
+            Value: {{walletBallance}}
+        </li>
+    </ul>
+    <br>
+</template>
+
+<template name="currentWallet">
+    <button class="search" type="button">Get my wallet</button>
+
+    <ul>
+        <li>
+            your current wallet address is: {{walletAddress}}
+        </li>
+        <li>
+            current value is: {{walletValue}}
+        </li>
+    </ul>
+
+</template>
